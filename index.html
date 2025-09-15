@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations bancaires – Mosquée de Tarascon</title>
+    <!-- favicon mosquee -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <!-- fonts google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">
+                <span class="mosque-icon">🕌</span>
+                Mosquée de Tarascon
+            </h1>
+            <h2 class="sub-title">Informations bancaires</h2>
+            <div class="divider"></div>
+            <p class="address">43 Rue de Ledru Rollin, 13150 Tarascon</p>
+        </header>
+
+        <div class="card">
+            <div class="info-item">
+                <div class="info-label">IBAN</div>
+                <div class="info-value" id="iban">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
+                <button class="copy-btn" onclick="copyToClipboard('iban', this)">
+                    <span class="copy-icon">📋</span>
+                    Copier
+                </button>
+            </div>
+
+            <!-- bloc bic -->
+            <div class="info-item">
+                <div class="info-label">
+                    <!-- <span class="info-icon">�</span> -->
+                    BIC
+                </div>
+                <div class="info-value" id="bic">XXXXXXXX</div>
+                <button class="copy-btn" onclick="copyToClipboard('bic', this)">
+                    <span class="copy-icon">📋</span>
+                    Copier
+                </button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn pdf-btn" onclick="downloadPDF()">
+                    <span class="btn-icon">📄</span>
+                    Télécharger le RIB
+                </button>
+
+                <button class="action-btn prayer-btn" onclick="openPrayerTimes()">
+                    <span class="btn-icon">🕐</span>
+                    Horaires de prière
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-text">En cas de doute, veuillez contacter un responsable de la mosquée.</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification">Copié dans le presse-papier !</div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

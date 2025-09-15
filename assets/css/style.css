@@ -1,0 +1,501 @@
+/* ========================================
+   RESET ET BASE
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* page principale */
+body {
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f8fbf8 0%, #ffffff 50%, #f0f7f0 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #2c3e3c;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ========================================
+   HEADER ET TITRES
+======================================== */
+
+.header {
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+}
+
+/* titre principal */
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a4d47;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* sous titre */
+.sub-title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #888;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+    letter-spacing: 0.5px;
+}
+
+/* ligne separatrice */
+.divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4a9b8e, transparent);
+    margin: 0 auto 1.5rem auto;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* adresse */
+.address {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding: 0 1rem;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+/* icone mosquee */
+.mosque-icon {
+    font-size: 2.5rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+/* ========================================
+   CARTE PRINCIPALE
+======================================== */
+
+/* carte blanche */
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   IBAN ET BIC
+======================================== */
+
+/* bloc iban/bic */
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #f8fdf8;
+    border-radius: 16px;
+    border-left: 4px solid #4a9b8e;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    animation: slideInUpWithZoom 0.8s ease-out forwards;
+    box-shadow: 0 4px 20px rgba(74, 155, 142, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(74, 155, 142, 0.15);
+}
+
+/* timing des animations */
+.info-item:first-child {
+    animation-delay: 0.6s;
+}
+
+.info-item:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+/* titre iban/bic */
+.info-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4a9b8e;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* valeur iban/bic */
+.info-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2c3e3c;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    word-break: break-all;
+}
+
+/* ========================================
+   BOUTONS COPIE
+======================================== */
+
+/* bouton copier avec pulsation */
+.copy-btn {
+    background: linear-gradient(135deg, #4a9b8e 0%, #3a7d70 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(74, 155, 142, 0.3);
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(135deg, #3a7d70 0%, #2d5f56 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 155, 142, 0.4);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+/* etat copie harmonieux */
+.copy-btn.copied {
+    background: linear-gradient(135deg, #5fb3a9 0%, #4a9b8e 100%);
+    box-shadow: 0 4px 12px rgba(95, 179, 169, 0.4);
+}
+
+.copy-icon {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   BOUTONS PDF ET HORAIRES
+======================================== */
+
+/* zone des boutons */
+.action-buttons {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0f0e5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #4a9b8e 0%, #3a7d70 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(74, 155, 142, 0.2);
+    min-width: 200px;
+    justify-content: center;
+    /* Animation cascade comme IBAN/BIC */
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    animation: slideInUpWithZoom 0.8s ease-out forwards;
+}
+
+/* Timing cascade pour les boutons */
+.action-btn:first-child {
+    animation-delay: 1s;
+}
+
+.action-btn:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+
+.action-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(74, 155, 142, 0.4);
+}
+
+.action-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Style spécifique pour le bouton PDF (prioritaire) */
+.pdf-btn {
+    background: linear-gradient(135deg, #4a9b8e 0%, #3a7d70 100%);
+    box-shadow: 0 4px 20px rgba(74, 155, 142, 0.3);
+    font-weight: 600;
+}
+
+.pdf-btn:hover {
+    background: linear-gradient(135deg, #3a7d70 0%, #2d5f56 100%);
+    box-shadow: 0 8px 30px rgba(74, 155, 142, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Style spécifique pour le bouton Mawaqit */
+.prayer-btn {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.2);
+}
+
+.prayer-btn:hover {
+    background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #6b7780;
+    font-style: italic;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #22c55e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes slideInUpWithZoom {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(74, 155, 142, 0);
+    }
+    50% {
+        transform: scale(1.015);
+        text-shadow: 0 0 6px rgba(74, 155, 142, 0.2);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .mosque-icon {
+        font-size: 2rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+    }
+
+    .address {
+        font-size: 0.9rem;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+
+    .info-value {
+        font-size: 1.1rem;
+    }
+
+    .info-label {
+        font-size: 0.9rem;
+    }
+
+    .action-buttons {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .action-btn {
+        min-width: 180px;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.3rem;
+    }
+
+    .notification {
+        position: fixed;
+        top: 1rem;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        width: auto;
+        max-width: 250px;
+        min-height: auto;
+        max-height: 40px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        line-height: 1.2;
+        text-align: center;
+        border-radius: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateX(-50%) translateY(-60px);
+    }
+
+    .notification.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .mosque-icon {
+        font-size: 1.8rem;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .sub-title {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .address {
+        font-size: 0.8rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .info-item {
+        padding: 1rem;
+    }
+
+    .info-value {
+        font-size: 1rem;
+    }
+
+    .action-btn {
+        min-width: 160px;
+        font-size: 0.85rem;
+        padding: 0.65rem 1.2rem;
+    }
+}
