@@ -131,6 +131,17 @@ body {
     box-shadow: 0 4px 20px rgba(74, 155, 142, 0.1);
     transition: all 0.3s ease;
 }
+#iban {
+  text-decoration: none !important;      /* enlève soulignement */
+  color: inherit !important;             /* garde la couleur normale */
+  background: none !important;           /* supprime surlignage jaune/bleu */
+  -webkit-user-select: text !important;  /* iOS/Chrome */
+  -moz-user-select: text !important;     /* Firefox */
+  -ms-user-select: text !important;      /* IE/Edge legacy */
+  user-select: text !important;          /* standard */
+  -webkit-touch-callout: none !important; /* bloque menus auto iOS */
+}
+
 
 .info-item:hover {
     transform: translateY(-2px) scale(1.02);
