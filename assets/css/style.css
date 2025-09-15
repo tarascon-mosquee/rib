@@ -132,14 +132,18 @@ body {
     transition: all 0.3s ease;
 }
 #iban {
-  text-decoration: none !important;      /* enlève soulignement */
-  color: inherit !important;             /* garde la couleur normale */
-  background: none !important;           /* supprime surlignage jaune/bleu */
-  -webkit-user-select: text !important;  /* iOS/Chrome */
-  -moz-user-select: text !important;     /* Firefox */
-  -ms-user-select: text !important;      /* IE/Edge legacy */
-  user-select: text !important;          /* standard */
-  -webkit-touch-callout: none !important; /* bloque menus auto iOS */
+  text-decoration: none !important;
+  color: inherit !important;
+  background: none !important;
+
+  /* Désactive les détections automatiques de Safari/iOS */
+  -webkit-user-select: text !important;
+  -webkit-touch-callout: none !important;
+
+  /* Compat multi-navigateurs */
+  -moz-user-select: text !important;   /* Firefox */
+  -ms-user-select: text !important;    /* IE/Edge legacy */
+  user-select: text !important;        /* Standard */
 }
 
 
