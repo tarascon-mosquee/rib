@@ -5,8 +5,9 @@
 // copie iban ou bic
 async function copyToClipboard(elementId, button) {
     const element = document.getElementById(elementId);
-    const text = element.textContent;
-    
+    // supprime tous les espaces
+    const text = element.textContent.replace(/\s+/g, '');
+
     try {
         await navigator.clipboard.writeText(text);
         showNotification();
@@ -42,6 +43,7 @@ async function copyToClipboard(elementId, button) {
         document.body.removeChild(textArea);
     }
 }
+
 
 // affiche notif "copié"
 function showNotification() {
